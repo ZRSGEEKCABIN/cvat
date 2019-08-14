@@ -3306,6 +3306,13 @@ class PointsView extends PolyShapeView {
                     element.setAttribute('visibility','hidden')
                 }
             });
+            $('.points').each((index,element) => {
+                if(window._displayPolylineValue){
+                    element.style.visibility = 'visible'
+                }else{
+                    element.style.visibility = 'hidden'
+                }
+            });
             // window.x = this._uis.points
         })
     }
