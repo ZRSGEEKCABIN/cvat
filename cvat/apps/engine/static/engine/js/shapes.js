@@ -3293,12 +3293,12 @@ class PointsView extends PolyShapeView {
         // for (let point of points) {
             let radius = POINT_RADIUS * 2 / window.cvat.player.geometry.scale;
             let scaledStroke = STROKE_WIDTH / window.cvat.player.geometry.scale;
-            console.log('points ------------------',this._uis.points)
             this._uis.points.circle(radius).move(point.x - radius / 2, point.y - radius / 2)
                 .fill('inherit').stroke('black').attr('stroke-width', scaledStroke).addClass('tempMarker');
             // collectionModel.selectAllWithLabel(+labelId);
             //添加序号
-            this._uis.points.text(''+index).move(point.x-5,point.y+5).size(5).fill('white').addClass('controlDisplay');
+            const numberSize = window.__numberSize||30
+            this._uis.points.text(''+index).move(point.x-5,point.y+5).size(numberSize).fill('white').addClass('controlDisplay');
             $('.controlDisplay').each((index,element) => {
                 if(window._displayNumberValue){
                     element.setAttribute('visibility','visible')

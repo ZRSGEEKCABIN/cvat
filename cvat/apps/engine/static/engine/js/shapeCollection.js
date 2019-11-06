@@ -1132,6 +1132,7 @@ class ShapeCollectionView {
         this._selectedFillOpacityRange = $('#selectedFillOpacityRange');
         this._blackStrokeCheckbox = $('#blackStrokeCheckbox');
         this._displayNumber = $('#displayNumber');
+        this._numberSize = $('#numberSize');
         this._displayPolyline = $('#displayPolyline');
         this._colorByInstanceRadio = $('#colorByInstanceRadio');
         this._colorByGroupRadio = $('#colorByGroupRadio');
@@ -1201,6 +1202,11 @@ class ShapeCollectionView {
                     element.style.visibility = 'hidden'
                 }
             });
+        });
+        this._numberSize.on('change', (e) => {
+            let value = Math.clamp(+e.target.value, +e.target.min, +e.target.max);
+            e.target.value = value;
+            window.__numberSize = value;
         });
         this._displayPolyline.on('click', (e) => {
             window._displayPolylineValue = e.target.checked
