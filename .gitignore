@@ -12,7 +12,7 @@
 !/ssh/README.md
 node_modules
 
-
+*.DS_Store
 # Ignore temporary files
 docker-compose.override.yml
 /.vscode
